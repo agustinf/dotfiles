@@ -31,3 +31,34 @@ alias path="echo $PATH | tr -s ':' '\n'"
 # Other aliases
 eval $(thefuck --alias)
 eval $(hub alias -s)
+
+alias surbtc="
+  osascript -e 'tell application \"iTerm\" to activate'
+
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"t\" using command down'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd ~/src/patabit-engine\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"QUEUE=* bundle exec rake resque:work\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"d\" using command down'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd ~/src/surBTC\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"QUEUE=* bundle exec rake resque:work\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"d\" using {shift down, command down}'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd ~/src/surBTC\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"rails s\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 123 using {option down, command down}'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"d\" using {shift down, command down}'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"cd ~/src/patabit-engine\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to keystroke \"rails s -p 3001\"'
+  osascript -e 'tell application \"System Events\" to tell process \"iTerm\" to key code 52'
+
+
+"
